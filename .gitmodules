@@ -1,0 +1,3 @@
+[submodule "Node-Weft"]
+	path = Node-Weft
+	url = https://github.com/JustinArty/Node-Weft
