@@ -24,6 +24,7 @@
     <ProjectGuid>{1eb5f069-542e-408b-a1a7-a4eb866bd6c4}</ProjectGuid>
     <RootNamespace>NodeWeftExample</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Node-Weft-Example1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -81,8 +82,17 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;Imm32.lib;d2d1.lib;dwrite.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)Node-Weft\external\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Node-Weft\external\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(OutDir)resource" mkdir "$(OutDir)resource"
+xcopy /y /d /e "$(SolutionDir)Node-Weft\resource\*" "$(OutDir)resource\"
+if not exist "$(OutDir)resource\Examples" mkdir "$(OutDir)resource\Examples"
+if not exist "$(OutDir)resource\Database" mkdir "$(OutDir)resource\Database"
+if not exist "$(OutDir)resource\NodeIcon" mkdir "$(OutDir)resource\NodeIcon"
+if not exist "$(OutDir)resource\Layout" mkdir "$(OutDir)resource\Layout"
+xcopy /y /d /e "$(ProjectDir)resource\*" "$(OutDir)resource\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -97,8 +107,20 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;Imm32.lib;d2d1.lib;dwrite.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)Node-Weft\external\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Node-Weft\external\lib</AdditionalLibraryDirectories>
     </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>if not exist "$(OutDir)resource" mkdir "$(OutDir)resource"
+xcopy /y /d /e "$(SolutionDir)Node-Weft\resource\*" "$(OutDir)resource\"
+if not exist "$(OutDir)resource\Examples" mkdir "$(OutDir)resource\Examples"
+if not exist "$(OutDir)resource\Database" mkdir "$(OutDir)resource\Database"
+if not exist "$(OutDir)resource\NodeIcon" mkdir "$(OutDir)resource\NodeIcon"
+if not exist "$(OutDir)resource\Layout" mkdir "$(OutDir)resource\Layout"
+xcopy /y /d /e "$(ProjectDir)resource\*" "$(OutDir)resource\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -111,9 +133,18 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)Node-Weft\external\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Node-Weft\external\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;Imm32.lib;d2d1.lib;dwrite.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(OutDir)resource" mkdir "$(OutDir)resource"
+xcopy /y /d /e "$(SolutionDir)Node-Weft\resource\*" "$(OutDir)resource\"
+if not exist "$(OutDir)resource\Examples" mkdir "$(OutDir)resource\Examples"
+if not exist "$(OutDir)resource\Database" mkdir "$(OutDir)resource\Database"
+if not exist "$(OutDir)resource\NodeIcon" mkdir "$(OutDir)resource\NodeIcon"
+if not exist "$(OutDir)resource\Layout" mkdir "$(OutDir)resource\Layout"
+xcopy /y /d /e "$(ProjectDir)resource\*" "$(OutDir)resource\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -128,16 +159,31 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;Imm32.lib;d2d1.lib;dwrite.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)Node-Weft\external\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Node-Weft\external\lib</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(OutDir)resource" mkdir "$(OutDir)resource"
+xcopy /y /d /e "$(SolutionDir)Node-Weft\resource\*" "$(OutDir)resource\"
+if not exist "$(OutDir)resource\Examples" mkdir "$(OutDir)resource\Examples"
+if not exist "$(OutDir)resource\Database" mkdir "$(OutDir)resource\Database"
+if not exist "$(OutDir)resource\NodeIcon" mkdir "$(OutDir)resource\NodeIcon"
+if not exist "$(OutDir)resource\Layout" mkdir "$(OutDir)resource\Layout"
+xcopy /y /d /e "$(ProjectDir)resource\*" "$(OutDir)resource\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="Node-Weft\Node-Weft.vcxproj">
-      <Project>{d4eecfd8-dee9-444b-a8d3-156ed4eabf70}</Project>
-    </ProjectReference>
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\OpticsNode.cpp" />
+    <ClCompile Include="src\RayOptics.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Example1\Main.cpp" />
+    <ClInclude Include="src\OpticsNode.h" />
+    <ClInclude Include="src\RayOptics.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Node-Weft\Node-Weft.vcxproj">
+      <Project>{d4eecfd8-dee9-444b-a8d3-156ed4eabf70}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

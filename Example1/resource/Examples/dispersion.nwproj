@@ -1,0 +1,272 @@
+{
+    "Project": {
+        "#DirFoldFlag": "1",
+        "Scene": {
+            "node": {
+                "Optics Source1": {
+                    "className": "Optics Source",
+                    "TurnOnFlag": "0",
+                    "SkipFlag": "0",
+                    "SelectFlag": "0",
+                    "NodePos": "0 0",
+                    "Source Type": {
+                        "type": "Menu",
+                        "dim": "1",
+                        "id0": "1"
+                    },
+                    "Ray Count": {
+                        "type": "Int",
+                        "dim": "1",
+                        "id0": "10"
+                    },
+                    "Wavelength (nm)": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "455"
+                    },
+                    "Aperture X": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "0"
+                    },
+                    "Aperture Size": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "1"
+                    },
+                    "Center": {
+                        "type": "Double",
+                        "dim": "2",
+                        "id0": "-10",
+                        "id1": "0"
+                    },
+                    "Angle": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "20"
+                    },
+                    "Start Offset": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "10"
+                    },
+                    "InputNode": {
+                        "pin0": ""
+                    }
+                },
+                "Optics Source2": {
+                    "className": "Optics Source",
+                    "TurnOnFlag": "0",
+                    "SkipFlag": "0",
+                    "SelectFlag": "0",
+                    "NodePos": "0 70",
+                    "Source Type": {
+                        "type": "Menu",
+                        "dim": "1",
+                        "id0": "1"
+                    },
+                    "Ray Count": {
+                        "type": "Int",
+                        "dim": "1",
+                        "id0": "10"
+                    },
+                    "Wavelength (nm)": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "550"
+                    },
+                    "Aperture X": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "0"
+                    },
+                    "Aperture Size": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "1"
+                    },
+                    "Center": {
+                        "type": "Double",
+                        "dim": "2",
+                        "id0": "-10",
+                        "id1": "0"
+                    },
+                    "Angle": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "20"
+                    },
+                    "Start Offset": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "10"
+                    },
+                    "InputNode": {
+                        "pin0": {
+                            "Optics Source1": "pin-1"
+                        }
+                    }
+                },
+                "Optics Source3": {
+                    "className": "Optics Source",
+                    "TurnOnFlag": "0",
+                    "SkipFlag": "0",
+                    "SelectFlag": "0",
+                    "NodePos": "0 140",
+                    "Source Type": {
+                        "type": "Menu",
+                        "dim": "1",
+                        "id0": "1"
+                    },
+                    "Ray Count": {
+                        "type": "Int",
+                        "dim": "1",
+                        "id0": "10"
+                    },
+                    "Wavelength (nm)": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "640"
+                    },
+                    "Aperture X": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "0"
+                    },
+                    "Aperture Size": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "1"
+                    },
+                    "Center": {
+                        "type": "Double",
+                        "dim": "2",
+                        "id0": "-10",
+                        "id1": "0"
+                    },
+                    "Angle": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "20"
+                    },
+                    "Start Offset": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "10"
+                    },
+                    "InputNode": {
+                        "pin0": {
+                            "Optics Source2": "pin-1"
+                        }
+                    }
+                },
+                "Optics Lens1": {
+                    "className": "Optics Lens",
+                    "TurnOnFlag": "0",
+                    "SkipFlag": "0",
+                    "SelectFlag": "0",
+                    "NodePos": "282 122",
+                    "Position X": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "0"
+                    },
+                    "Curvature Radius": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "100"
+                    },
+                    "Refractive Index": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "1.5"
+                    },
+                    "Dispersive Coefficient": {
+                        "type": "Double",
+                        "dim": "1",
+                        "id0": "0.2"
+                    },
+                    "Is Entrance": {
+                        "type": "bool",
+                        "data": "1"
+                    },
+                    "InputNode": {
+                        "pin0": ""
+                    }
+                },
+                "Optics Refract1": {
+                    "className": "Optics Refract",
+                    "TurnOnFlag": "1",
+                    "SkipFlag": "0",
+                    "SelectFlag": "0",
+                    "NodePos": "157.7259489 218.4033356",
+                    "InputNode": {
+                        "pin0": {
+                            "Optics Source3": "pin-1"
+                        },
+                        "pin1": {
+                            "Optics Lens1": "pin-1"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "TargetScene": "Project\\Scene",
+    "Layout": {
+        "seperateXorY": "1",
+        "ratio": "0.121189",
+        "downLeftNode": {
+            "workspace0": {
+                "className": "Scene Manager"
+            },
+            "currentPage": "0"
+        },
+        "downRightNode": {
+            "seperateXorY": "1",
+            "ratio": "0.5",
+            "downLeftNode": {
+                "workspace0": {
+                    "className": "Viewport",
+                    "vertices": "-159.8754682 24.00806559",
+                    "scale": "26.81280184"
+                },
+                "workspace1": {
+                    "className": "Render View",
+                    "cameraPos": "20 20 20",
+                    "lookAtPos": "0 0 0",
+                    "lightDir": "0.5 1 1.5",
+                    "pinFlag": "0"
+                },
+                "workspace2": {
+                    "className": "Diagram View",
+                    "pinFlag": "0"
+                },
+                "workspace3": {
+                    "className": "Text View",
+                    "pinFlag": "0"
+                },
+                "currentPage": "0"
+            },
+            "downRightNode": {
+                "seperateXorY": "0",
+                "ratio": "0.5",
+                "downLeftNode": {
+                    "workspace0": {
+                        "className": "Parameter Editor",
+                        "pinFlag": "0"
+                    },
+                    "currentPage": "0"
+                },
+                "downRightNode": {
+                    "workspace0": {
+                        "className": "Node Editor",
+                        "vertices": "-258.7265449 -140.9808815",
+                        "scale": "1.105170918"
+                    },
+                    "currentPage": "0"
+                }
+            }
+        }
+    }
+}
