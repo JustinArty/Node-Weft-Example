@@ -2,7 +2,7 @@
 A demo project showcasing for [Node-Weft](https://github.com/JustinArty/Node-Weft) library.
 ## Getting Started.
 ```
-git clone https://github.com/JustinArty/Node-Weft
+git clone https://github.com/JustinArty/Node-Weft-Example
 cmake -B build
 cmake --build build
 ```
